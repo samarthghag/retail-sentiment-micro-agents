@@ -1,0 +1,25 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Datasets and processed files
+data/raw/
+data/processed/
+
+# Model checkpoints
+checkpoints/
+
+# Serialized binary data and model weights
+*.parquet
+*.bin
+*.safetensors
+
+# Python cache and Jupyter checkpoints
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Secrets
+.env
