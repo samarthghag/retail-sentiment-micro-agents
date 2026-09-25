@@ -16,9 +16,11 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 DEFAULT_PROMPT_TEMPLATE = (
-    "You are a financial sentiment classifier. Classify the sentiment of the "
-    "following financial statement as exactly one word: Positive, Negative, or Neutral.\n"
-    "Only output the single label word, nothing else.\n\n"
+    "You are a financial sentiment classifier. Classify the sentiment of a financial "
+    "statement as exactly one word: Positive, Negative, or Neutral. Respond with only "
+    "the single label word — no punctuation, no explanation, no reasoning.\n\n"
+    "Statement: Profit for the third quarter rose to EUR 6.5 million from EUR 2.8 million.\n"
+    "Label: Positive\n\n"
     "Statement: {sentence}\n"
     "Label:"
 )
@@ -78,7 +80,7 @@ class QwenBaselineEvaluator:
         dataset: Any,
         prompt_template: Optional[str] = None,
         batch_size: int = 8,
-        max_new_tokens: int = 8,
+        max_new_tokens: int = 4,
         text_col: str = "sentence",
         label_col: str = "label",
     ) -> Dict[str, float]:
