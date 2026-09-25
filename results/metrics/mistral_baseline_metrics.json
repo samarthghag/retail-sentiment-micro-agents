@@ -4,6 +4,6 @@
     "f1_negative": 0.8901098901098901,
     "f1_neutral": 0.8507795100222717,
     "f1_positive": 0.6898395721925134,
-    "unparseable_rate": 0.0,
+    "unparseable_rate": 0,
     "n_samples": 727
 }
